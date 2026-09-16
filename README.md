@@ -1,76 +1,76 @@
-# Manoj Oli — GRC Intern Portfolio
+# Manoj Oli — Executive GRC & ISO Consultant Portfolio
 
-A professional portfolio website for **Manoj Oli**, GRC Intern, built with **Next.js 16 + TypeScript + Tailwind CSS**.
+A luxury, modern personal portfolio website built with **Next.js (App Router)** and styled after the executive consulting aesthetic of **[roshannrs.com](https://roshannrs.com/)**.
 
-## ✨ Sections
+---
 
-| Section | Description |
-|---|---|
-| 🏠 Hero | Name, title, stats, profile card, CTA buttons |
-| 👤 About | Bio, qualities, info card with skills tags |
-| 🛡️ Skills | 8 GRC competency cards + tools proficiency bars |
-| ⚙️ How I Work | 5-step process (navy dark section) + scope |
-| 💼 Experience | Timeline with NRS internship + volunteer work |
-| 🏆 Certifications | Status-tagged cert cards + education banner |
-| 📁 Projects | 4 GRC project cards with outcomes + tags |
-| 📬 Contact | Contact form + info + availability card |
-| 🦶 Footer | 4-col footer with dark navy background |
+## 🌟 Key Features & Sections
 
-## 🎨 Design
+- **Header & Luxury Navigation**:
+  - Sticky glassmorphic navbar with custom typography and contact email.
+  - Animated 4-bar hamburger button opening a full-height off-canvas modern drawer menu with dark gradient, quick links, and social links.
+- **Hero Section**:
+  - Fullscreen display typography with split styling (`MANOJ` `OLI`).
+  - Subtitle with horizontal separator bar (`Governance, Risk & Compliance Specialist`).
+  - Animated mouse outline scroll indicator.
+  - 4-column executive stats banner (Expertise, Born In, Worked With, Education).
+- **Executive Biography & Bio**:
+  - Split layout with detail-rich overview and interactive "KNOW MORE..." expansion.
+  - Signature 3D Tilt Number Counter Box (`03+ YEARS OF EXPERIENCE`) with hover physics.
+- **Amazing Expertise**:
+  - 6-card interactive grid with zoom animations, dark overlay, category tags, and detail modals.
+- **Industry Verticals**:
+  - Split layout with profile portrait on the left and 4 key sector feature cards on the right (Financial & Banking, Technology & SaaS, Telecom & Enterprise, Healthcare).
+- **Proud Stories**:
+  - Interactive testimonial and milestone carousel with navigation controls and pagination dots.
+- **Achievements**:
+  - 2-column year-by-year timeline cards (`2023`, `2024`, `2025`, `2026`) with `hvr-float-3px` hover animations.
+- **My Alliances & Ecosystem**:
+  - Brand and partner network grid with wobble hover animations and outbound links.
+- **Any Queries? / Contact Form**:
+  - Contact information and social media bar on the left.
+  - Form with validation and real-time interactive success feedback on the right.
+- **Footer**:
+  - Simple bottom navigation, copyright, and floating scroll-to-top button.
 
-- **Primary**: Navy Blue (`#0f2a4a`) — same as reference
-- **Accent**: Orange (`#f5820a`) — same as reference
-- **Style**: Cards, numbered steps, clean typography
+---
 
-## 🚀 Deploy to Vercel
+## 🚀 Deploying to Vercel (`manojoli.vercel.app`)
 
-### Option 1: Vercel CLI (Recommended)
-
+### Option 1: Via Vercel CLI
 ```bash
-# 1. Install Vercel CLI
-npm install -g vercel
+# 1. Install Vercel CLI (if not already installed)
+npm i -g vercel
 
-# 2. In the project folder:
+# 2. Log in and deploy
 vercel
 
-# 3. Follow prompts — it auto-detects Next.js
-# 4. Your site will be live at: https://manoj-oli-portfolio.vercel.app
+# Follow prompts:
+# - Set project name as "manojoli" to get manojoli.vercel.app
 ```
 
-### Option 2: GitHub + Vercel Dashboard
+### Option 2: Via GitHub & Vercel Dashboard
+1. Push your repository to GitHub (e.g., `github.com/<your-username>/manoj-oli-portfolio`).
+2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
+3. Import your GitHub repository.
+4. In **Project Name**, enter `manojoli`.
+5. Click **Deploy**. Vercel will deploy your site to `https://manojoli.vercel.app`.
 
-1. Push this project to GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial portfolio"
-   git remote add origin https://github.com/YOUR_USERNAME/manoj-oli-portfolio.git
-   git push -u origin main
-   ```
+### Adding Custom Domain `manojoli.vercel.com` (or `manojoli.com`)
+1. In your Vercel Dashboard, go to your project → **Settings** → **Domains**.
+2. Type `manojoli.vercel.com` (or your registered custom domain `manojoli.com`).
+3. Click **Add** and follow the DNS verification instructions provided by Vercel.
 
-2. Go to [vercel.com](https://vercel.com) → **New Project**
-3. Import your GitHub repository
-4. Click **Deploy** — done! 🎉
+---
 
-## 🛠️ Local Development
+## 💻 Local Development
 
 ```bash
-npm run dev      # Start dev server at http://localhost:3000
-npm run build    # Production build
-npm run start    # Start production server
+# Install dependencies
+npm install
+
+# Run local development server
+npm run dev
+
+# Open browser at http://localhost:3000
 ```
-
-## 📝 Customization
-
-Update personal info in these files:
-
-| File | What to update |
-|---|---|
-| `components/HeroSection.tsx` | Name, bio, stats |
-| `components/AboutSection.tsx` | About text, qualities |
-| `components/ExperienceSection.tsx` | Job history |
-| `components/CertificationsSection.tsx` | Certs & education |
-| `components/ProjectsSection.tsx` | GRC projects |
-| `components/ContactSection.tsx` | Email, LinkedIn, location |
-| `components/Footer.tsx` | Social links |
-| `app/layout.tsx` | SEO metadata |

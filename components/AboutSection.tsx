@@ -1,170 +1,216 @@
 'use client';
 
-const qualities = [
-  { icon: '🎯', title: 'Detail-Oriented', desc: 'Meticulous approach to risk documentation and compliance assessments.' },
-  { icon: '🤝', title: 'Collaborative', desc: 'Work effectively across teams to align GRC strategies with business goals.' },
-  { icon: '📚', title: 'Continuous Learner', desc: 'Staying current with evolving regulations and security frameworks.' },
-  { icon: '⚡', title: 'Problem Solver', desc: 'Identifying control gaps and recommending practical, scalable solutions.' },
-];
+import { useState } from 'react';
 
 export default function AboutSection() {
+  const [showMore, setShowMore] = useState(false);
+
   return (
-    <section id="about" style={{ padding: '100px 0', background: '#fff' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '80px',
-          alignItems: 'center',
-        }} className="about-grid">
-          {/* Left – Visual */}
-          <div style={{ position: 'relative' }}>
-            <div style={{
-              background: 'linear-gradient(135deg, #0f2a4a 0%, #1a3a5c 100%)',
-              borderRadius: '20px',
-              padding: '40px',
-              color: '#fff',
-              position: 'relative',
-              overflow: 'hidden',
-            }}>
-              <div style={{
-                position: 'absolute', top: '-40px', right: '-40px',
-                width: '180px', height: '180px',
-                background: 'rgba(245,130,10,0.15)',
-                borderRadius: '50%',
-              }} />
+    <section id="about" style={{ padding: '110px 0 90px', backgroundColor: '#ffffff', position: 'relative' }}>
+      <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 28px' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1.2fr 0.8fr',
+            gap: '60px',
+            alignItems: 'center',
+          }}
+          className="about-split-grid"
+        >
+          {/* Left Column: Executive Bio */}
+          <div>
+            <span className="section-tagline">About Manoj Oli</span>
 
-              <div style={{ marginBottom: '24px' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '8px' }}>👨‍💻</div>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '4px' }}>Manoj Oli</h3>
-                <p style={{ color: '#f5820a', fontWeight: 600 }}>GRC Intern</p>
+            <h2
+              className="litho-heading"
+              style={{
+                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                lineHeight: 1.15,
+                marginBottom: '28px',
+                textTransform: 'uppercase',
+              }}
+            >
+              <span className="litho-primary-title">MANOJ OLI</span>
+              <br />
+              <span className="litho-secondary-title" style={{ fontSize: '0.85em', color: '#0038e3', fontWeight: 600 }}>
+                GRC INTERN @ NRS
+              </span>
+            </h2>
+
+            <p style={{ color: '#4b5563', fontSize: '1.05rem', lineHeight: 1.85, marginBottom: '20px' }}>
+              I am a Governance, Risk & Compliance (GRC) Intern at <strong>Nepal Realistic Solutions (NRS)</strong>, passionate about helping organizations establish resilient security postures, implement <strong>ISO/IEC 27001</strong> standards, and maintain regulatory compliance.
+            </p>
+
+            <p style={{ color: '#4b5563', fontSize: '1.05rem', lineHeight: 1.85, marginBottom: '24px' }}>
+              With a strong foundation in computer science and cybersecurity, I assist in conducting risk assessments, drafting information security policies, maintaining risk registers, and preparing evidence packages for internal and external audits.
+            </p>
+
+            {showMore && (
+              <div
+                style={{
+                  background: '#f8fafc',
+                  borderLeft: '4px solid #0038e3',
+                  padding: '20px 24px',
+                  borderRadius: '0 10px 10px 0',
+                  marginBottom: '24px',
+                  animation: 'fadeIn 0.4s ease-in-out',
+                }}
+              >
+                <h4 style={{ fontWeight: 800, color: '#111827', marginBottom: '10px', fontSize: '1.05rem' }}>
+                  Key Areas of Practical Internship Experience:
+                </h4>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {[
+                    'Assisting in ISO/IEC 27001:2022 gap analyses & control mapping',
+                    'Developing & updating organizational Risk Registers & threat matrices',
+                    'Drafting Information Security Policies, SOPs, and Acceptable Use guidelines',
+                    'Supporting internal audit preparations and compliance evidence verification',
+                    'Researching GDPR, NIST CSF, and global data privacy standards',
+                  ].map((item) => (
+                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#374151', fontSize: '0.92rem' }}>
+                      <span style={{ color: '#0038e3', fontWeight: 800 }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
+            )}
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                {[
-                  { label: 'Location', value: '🇳🇵 Nepal' },
-                  { label: 'Focus', value: 'GRC & InfoSec' },
-                  { label: 'Education', value: 'BSc CS' },
-                  { label: 'Status', value: '🟢 Available' },
-                ].map((item) => (
-                  <div key={item.label} style={{
-                    background: 'rgba(255,255,255,0.08)',
-                    borderRadius: '10px',
-                    padding: '12px',
-                  }}>
-                    <div style={{ color: '#94b8d4', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>{item.label}</div>
-                    <div style={{ color: '#fff', fontWeight: 600, fontSize: '0.9rem' }}>{item.value}</div>
-                  </div>
-                ))}
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <button
+                type="button"
+                onClick={() => setShowMore(!showMore)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#0038e3',
+                  fontSize: '0.95rem',
+                  fontWeight: 800,
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '4px 0',
+                  borderBottom: '2px solid #0038e3',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#111827')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#0038e3')}
+              >
+                {showMore ? 'SHOW LESS ↑' : 'KNOW MORE... →'}
+              </button>
 
-              {/* Skills tags */}
-              <div style={{ marginTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {['ISO 27001', 'GDPR', 'SOC 2', 'NIST', 'Risk Management', 'Audit'].map((tag) => (
-                  <span
-                    key={tag}
-                    style={{
-                      background: 'rgba(245,130,10,0.2)',
-                      border: '1px solid rgba(245,130,10,0.4)',
-                      borderRadius: '50px',
-                      padding: '4px 12px',
-                      color: '#f5820a',
-                      fontSize: '0.75rem',
-                      fontWeight: 600,
-                    }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Experience badge */}
-            <div style={{
-              position: 'absolute',
-              bottom: '-20px',
-              right: '-20px',
-              background: 'linear-gradient(135deg, #f5820a, #ff9a2e)',
-              borderRadius: '16px',
-              padding: '20px',
-              color: '#fff',
-              boxShadow: '0 8px 24px rgba(245,130,10,0.4)',
-              textAlign: 'center',
-            }}>
-              <div style={{ fontSize: '1.8rem', fontWeight: 800 }}>1+</div>
-              <div style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.9 }}>Years in<br />GRC Field</div>
+              <a
+                href="https://www.linkedin.com/in/manoj-oli-a28840301/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#111827',
+                  fontSize: '0.9rem',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#0038e3')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#111827')}
+              >
+                <span>View LinkedIn Profile</span>
+                <span>↗</span>
+              </a>
             </div>
           </div>
 
-          {/* Right – Text */}
-          <div>
-            <div className="section-label">— About Me</div>
-            <h2 style={{
-              fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-              fontWeight: 800, color: '#0f2a4a',
-              marginBottom: '20px', lineHeight: 1.2,
-            }}>
-              Helping Organizations<br />
-              <span style={{ color: '#f5820a' }}>Navigate GRC Challenges</span>
-            </h2>
+          {/* Right Column: Signature 3D Tilt Experience Box */}
+          <div className="tilt-box-container" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div className="tilt-box">
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '-40px',
+                  right: '-40px',
+                  width: '160px',
+                  height: '160px',
+                  borderRadius: '50%',
+                  background: 'rgba(0, 56, 227, 0.25)',
+                  filter: 'blur(30px)',
+                }}
+              />
 
-            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: '16px', fontSize: '0.97rem' }}>
-              I&apos;m Manoj Oli, a passionate GRC intern currently working to bridge the gap between complex regulatory requirements and practical business operations. My focus lies in helping organizations build resilient governance frameworks and maintain a strong security posture.
-            </p>
-            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: '32px', fontSize: '0.97rem' }}>
-              With hands-on experience in risk assessment, compliance management, and audit support, I bring structured thinking and attention to detail to every project I undertake — from ISO 27001 gap analyses to policy documentation and control testing.
-            </p>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-              {qualities.map((q) => (
-                <div
-                  key={q.title}
-                  style={{
-                    background: '#f8fafc',
-                    border: '1px solid #e5e7eb',
-                    borderRadius: '12px',
-                    padding: '16px',
-                    transition: 'all 0.2s',
-                    cursor: 'default',
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = '#f5820a';
-                    (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)';
-                    (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 20px rgba(245,130,10,0.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = '#e5e7eb';
-                    (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
-                    (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
-                  }}
-                >
-                  <div style={{ fontSize: '1.5rem', marginBottom: '8px' }}>{q.icon}</div>
-                  <div style={{ fontWeight: 700, color: '#0f2a4a', fontSize: '0.9rem', marginBottom: '4px' }}>{q.title}</div>
-                  <div style={{ color: '#777', fontSize: '0.8rem', lineHeight: 1.5 }}>{q.desc}</div>
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <span className="tilt-box-number">01+</span>
+                <div style={{ marginTop: '16px' }}>
+                  <h3
+                    className="litho-heading"
+                    style={{
+                      fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)',
+                      color: '#ffffff',
+                      lineHeight: 1.15,
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    <span style={{ fontWeight: 800, color: '#93c5fd', display: 'block' }}>YEAR IN GRC &</span>
+                    <span style={{ fontWeight: 300, color: '#ffffff' }}>INFOSEC FIELD</span>
+                  </h3>
+                  <p style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '12px', lineHeight: 1.6 }}>
+                    Hands-on internship experience in ISO 27001 compliance, risk registers, and policy frameworks at Nepal Realistic Solutions.
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
 
-            <button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            {/* Quick credentials badge below */}
+            <div
               style={{
-                marginTop: '28px',
-                background: 'linear-gradient(135deg, #f5820a, #ff9a2e)',
-                color: '#fff', border: 'none', borderRadius: '8px',
-                padding: '13px 28px', fontWeight: 700, fontSize: '0.95rem',
-                cursor: 'pointer',
-                boxShadow: '0 6px 20px rgba(245,130,10,0.3)',
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '16px',
               }}
             >
-              Learn More →
-            </button>
+              <div
+                style={{
+                  backgroundColor: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '12px',
+                  padding: '18px',
+                }}
+              >
+                <span style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0038e3', display: 'block' }}>15+</span>
+                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  Audit & Risk Tasks
+                </span>
+              </div>
+              <div
+                style={{
+                  backgroundColor: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '12px',
+                  padding: '18px',
+                }}
+              >
+                <span style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0038e3', display: 'block' }}>10+</span>
+                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  Policies Drafted
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
-          .about-grid { grid-template-columns: 1fr !important; gap: 60px !important; }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(8px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 860px) {
+          .about-split-grid {
+            grid-template-columns: 1fr !important;
+            gap: 50px !important;
+          }
         }
       `}</style>
     </section>
