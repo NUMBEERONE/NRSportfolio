@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Manoj Oli — GRC Intern Portfolio
 
-## Getting Started
+A professional portfolio website for **Manoj Oli**, GRC Intern, built with **Next.js 16 + TypeScript + Tailwind CSS**.
 
-First, run the development server:
+## ✨ Sections
+
+| Section | Description |
+|---|---|
+| 🏠 Hero | Name, title, stats, profile card, CTA buttons |
+| 👤 About | Bio, qualities, info card with skills tags |
+| 🛡️ Skills | 8 GRC competency cards + tools proficiency bars |
+| ⚙️ How I Work | 5-step process (navy dark section) + scope |
+| 💼 Experience | Timeline with NRS internship + volunteer work |
+| 🏆 Certifications | Status-tagged cert cards + education banner |
+| 📁 Projects | 4 GRC project cards with outcomes + tags |
+| 📬 Contact | Contact form + info + availability card |
+| 🦶 Footer | 4-col footer with dark navy background |
+
+## 🎨 Design
+
+- **Primary**: Navy Blue (`#0f2a4a`) — same as reference
+- **Accent**: Orange (`#f5820a`) — same as reference
+- **Style**: Cards, numbered steps, clean typography
+
+## 🚀 Deploy to Vercel
+
+### Option 1: Vercel CLI (Recommended)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 1. Install Vercel CLI
+npm install -g vercel
+
+# 2. In the project folder:
+vercel
+
+# 3. Follow prompts — it auto-detects Next.js
+# 4. Your site will be live at: https://manoj-oli-portfolio.vercel.app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Option 2: GitHub + Vercel Dashboard
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Push this project to GitHub:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial portfolio"
+   git remote add origin https://github.com/YOUR_USERNAME/manoj-oli-portfolio.git
+   git push -u origin main
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Go to [vercel.com](https://vercel.com) → **New Project**
+3. Import your GitHub repository
+4. Click **Deploy** — done! 🎉
 
-## Learn More
+## 🛠️ Local Development
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev      # Start dev server at http://localhost:3000
+npm run build    # Production build
+npm run start    # Start production server
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Update personal info in these files:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| File | What to update |
+|---|---|
+| `components/HeroSection.tsx` | Name, bio, stats |
+| `components/AboutSection.tsx` | About text, qualities |
+| `components/ExperienceSection.tsx` | Job history |
+| `components/CertificationsSection.tsx` | Certs & education |
+| `components/ProjectsSection.tsx` | GRC projects |
+| `components/ContactSection.tsx` | Email, LinkedIn, location |
+| `components/Footer.tsx` | Social links |
+| `app/layout.tsx` | SEO metadata |

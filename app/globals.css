@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #0f2a4a;
+  --navy-light: #1a3a5c;
+  --orange: #f5820a;
+  --orange-light: #ff9a2e;
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --text-light: #555555;
+  --border: #e5e7eb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 3px;
+}
+
+/* Section label style */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--orange);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.section-label::before,
+.section-label::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: var(--orange);
+}
+
+/* Card hover */
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(245, 130, 10, 0.15);
+  border-color: var(--orange);
+}
+
+/* Animated underline on nav links */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Process step connector */
+.step-arrow {
+  color: var(--orange);
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+/* Timeline */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--orange);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--orange);
 }
